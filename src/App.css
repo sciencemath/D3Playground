@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.bars rect {
+  fill: steelblue;
+}
+
+.bars rect:hover {
+  fill: orange;
+}
+
+.labels text {
+  text-anchor: end;
+}

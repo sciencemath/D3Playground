@@ -4,6 +4,9 @@ import * as d3 from "d3";
 import { useMount } from "../hooks/useMount";
 
 /**
+ * For this it makes more sense to me
+ * to make react do the rendering and have
+ * d3 do more complex things but this is Day 1
  * 
  * @returns {React.Component}
  */
