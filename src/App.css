@@ -52,3 +52,8 @@
 .labels text {
   text-anchor: end;
 }
+
+path {
+	fill: none;
+	stroke: #999;
+}

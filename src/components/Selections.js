@@ -8,7 +8,7 @@ import { useMount } from "../hooks/useMount";
  * to make react do the rendering and have
  * d3 do more complex things but this is Day 1
  * 
- * @returns {React.Component}
+ * @returns {React.FC}
  */
 export const Selections = () => {
   const selectionRef = useRef(null)

@@ -8,7 +8,7 @@ import * as d3 from "d3";
 
 /**
  * 
- * @returns {React.Component}
+ * @returns {React.FC}
  */
 export const ScaleFunctions = () => {
   /**

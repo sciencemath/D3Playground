@@ -25,7 +25,7 @@ const cities = [
  * Example:
  * .data(array, (d) => d)
  * 
- * @returns {React.Component}
+ * @returns {React.FC}
  */
 export const DataJoins = () => {
 
