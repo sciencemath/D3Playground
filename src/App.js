@@ -7,6 +7,12 @@ import { Stacks } from './components/Stacks'
 import { Arcs } from './components/Arcs'
 import { Symbols } from './components/Symbols'
 import { Axis } from './components/Axis'
+import { Trees } from './components/Trees'
+import { Treemap } from './components/Treemap'
+import { PackCircles } from './components/PackCircles'
+import { Partitions } from './components/Partitions'
+import { Chord } from './components/Chord'
+import { PhysicsLayout } from './components/PhysicsLayout'
 
 import './App.css'
 
@@ -24,6 +30,12 @@ function App() {
       <Arcs />
       <Symbols />
       <Axis />
+      <Trees />
+      <Treemap />
+      <PackCircles />
+      <Partitions />
+      <Chord />
+      <PhysicsLayout />
     </>
   )
 }
