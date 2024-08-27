@@ -155,7 +155,7 @@ export const PhysicsLayout = () => {
             .style("fill", "white")
             .attr('x', (d) => d.x)
             .attr('y', (d) => d.y)
-            // .attr('dy', (d) => 5)
+            .attr('dy', (d) => 5)
       })
 
   }, [linked.current])
