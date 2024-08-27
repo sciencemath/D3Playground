@@ -31,3 +31,8 @@ I will break this down daily so I have sort of a journal.
 - Partitions
 - Chord
 - Much debugging on Physics
+
+## Day 5
+- Fixed issue w/ Physics
+- Collision
+- Debugging Forced Link
