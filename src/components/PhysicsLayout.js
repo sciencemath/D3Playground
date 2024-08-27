@@ -38,27 +38,28 @@ const nodes = [
   },
 ]
 
-var linkedNodes = [
-	{id: 0, name: 'A'},
-	{id: 1, name: 'B'},
-	{id: 2, name: 'C'},
-	{id: 3, name: 'D'},
-	{id: 4, name: 'E'},
-	{id: 5, name: 'F'},
-	{id: 6, name: 'G'},
-	{id: 7, name: 'H'},
-]
-
-const links = [
-  {source: 0, target: 1},
-  {source: 0, target: 2},
-  {source: 0, target: 3},
-  {source: 1, target: 6},
-  {source: 3, target: 4},
-  {source: 3, target: 7},
-  {source: 4, target: 5},
-  {source: 4, target: 7}
-]
+const graph = {
+  nodes: [
+    {id: 0, name: 'A'},
+    {id: 1, name: 'B'},
+    {id: 2, name: 'C'},
+    {id: 3, name: 'D'},
+    {id: 4, name: 'E'},
+    {id: 5, name: 'F'},
+    {id: 6, name: 'G'},
+    {id: 7, name: 'H'},
+  ],
+  links: [
+    {source: 0, target: 1},
+    {source: 0, target: 2},
+    {source: 0, target: 3},
+    {source: 1, target: 6},
+    {source: 3, target: 4},
+    {source: 3, target: 7},
+    {source: 4, target: 5},
+    {source: 4, target: 7}
+  ]
+}
 /**
  * 
  * @returns {React.FC}
@@ -124,19 +125,23 @@ export const PhysicsLayout = () => {
     const svg = select(linked.current)
 
     const simulation = forceSimulation()
+      .nodes(graph.nodes)
       .force("charge", forceManyBody().strength(-100))
       .force("center", forceCenter(400 / 2, 300 / 2))
-      .force("link", forceLink().id((d, i) => i).distance(50))
+      .force("link", forceLink(graph.links).id((d) => {
+        console.log(d)
+        return d.id
+      }).distance(50))
       .on("tick", () => {
         
           // update links
           svg
             .select('.links')
             .selectAll('line')
-            .data(links)
+            .data(graph.links)
             .join('line')
             .attr("class", "link")
-            .style("fill", "white")
+            .style("stroke", "white")
             .attr('x1', (d) => d.source.x)
             .attr('y1', (d) => d.source.y)
             .attr('x2', (d) => d.target.x)
@@ -146,7 +151,7 @@ export const PhysicsLayout = () => {
           svg
             .select('.nodes')
             .selectAll('text')
-            .data(linkedNodes)
+            .data(graph.nodes)
             .attr("class", "node")
             .join('text')
             .text((d) => d.name)
