@@ -128,10 +128,7 @@ export const PhysicsLayout = () => {
       .nodes(graph.nodes)
       .force("charge", forceManyBody().strength(-100))
       .force("center", forceCenter(400 / 2, 300 / 2))
-      .force("link", forceLink(graph.links).id((d) => {
-        console.log(d)
-        return d.id
-      }).distance(50))
+      .force("link", forceLink(graph.links).id((d) => d.id).distance(50))
       .on("tick", () => {
         
           // update links
