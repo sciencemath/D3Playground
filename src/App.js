@@ -13,6 +13,7 @@ import { PackCircles } from './components/PackCircles'
 import { Partitions } from './components/Partitions'
 import { Chord } from './components/Chord'
 import { PhysicsLayout } from './components/PhysicsLayout'
+import { Maps } from './components/Maps'
 
 import './App.css'
 
@@ -36,6 +37,7 @@ function App() {
       <Partitions />
       <Chord />
       <PhysicsLayout />
+      <Maps />
     </>
   )
 }

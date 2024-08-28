@@ -36,3 +36,7 @@ I will break this down daily so I have sort of a journal.
 - Fixed issue w/ Physics
 - Collision
 - Debugging Forced Link
+
+## Day 6
+- Fixed Force Link
+- Maps
